@@ -404,6 +404,23 @@
             padding: 20px;
             font-size: 0.85rem;
         }
+        .footer__credit {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: #555;
+        }
+        .footer__credit a {
+            color: var(--yellow);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer__credit a:hover {
+            color: var(--red);
+        }
+        .footer__credit i {
+            margin: 0 4px;
+            font-size: 0.7rem;
+        }
 
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
@@ -719,6 +736,12 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 IN-JOY® BURGER. All rights reserved. | Taste The Joy 🍔</p>
+            <p class="footer__credit">
+                Designed & Developed by 
+                <a href="https://addispower.pages.dev" target="_blank" rel="noopener">
+                    <i class="fas fa-bolt"></i> AddisPower <i class="fas fa-bolt"></i>
+                </a>
+            </p>
         </div>
     </footer>
 
