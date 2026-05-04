@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IN-JOY® BURGER - Premium burgers, sandwiches, wraps, wings, and more. Order now!">
+    <meta name="keywords" content="IN-JOY Burger, burgers, sandwiches, wings, nuggets, fast food, Addis Ababa">
+    <meta name="author" content="IN-JOY® BURGER">
+    <meta property="og:title" content="IN-JOY® BURGER | Premium Menu">
+    <meta property="og:description" content="Delicious burgers, crispy wings, fresh sandwiches & more. Taste the joy!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200">
+    <meta property="og:type" content="website">
+    <title>IN-JOY® BURGER | Premium Menu 🍔</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #DC2626;
+            --red-dark: #B91C1C;
+            --red-light: #FEE2E2;
+            --yellow: #FBBF24;
+            --yellow-dark: #F59E0B;
+            --yellow-light: #FEF3C7;
+            --dark: #1A1A1A;
+            --dark-light: #2D2D2D;
+            --white: #FFFFFF;
+            --cream: #FFFBF5;
+            --gray: #6B7280;
+            --gray-light: #F3F4F6;
+            --radius-sm: 8px;
+            --radius: 16px;
+            --radius-lg: 24px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.2);
+            --transition: 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0D0D0D;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* ============ TOP BAR ============ */
+        .topbar {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 10;
+        }
+        .topbar i { color: var(--yellow); margin: 0 6px; }
+        .topbar span { color: var(--yellow); }
+
+        /* ============ HEADER ============ */
+        .header {
+            background: rgba(13,13,13,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 3px solid var(--red);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+        .header__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo__icon {
+            width: 56px;
+            height: 56px;
+            background: var(--red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 4px 20px rgba(220,38,38,0.5);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,100% { box-shadow: 0 4px 20px rgba(220,38,38,0.5); }
+            50% { box-shadow: 0 4px 35px rgba(220,38,38,0.8); }
+        }
+        .logo__text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        .logo__text span { color: var(--red); }
+        .logo__sub {
+            font-size: 0.7rem;
+            color: #AAA;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .btn-order {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--red);
+            color: white;
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(220,38,38,0.4);
+        }
+        .btn-order:hover { background: var(--red-dark); transform: scale(1.05); }
+
+        /* ============ HERO ============ */
+        .hero {
+            background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 100%),
+                url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1400&q=80') center/cover no-repeat;
+            text-align: center;
+            padding: 100px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(0deg, #0D0D0D 0%, transparent 100%);
+            z-index: 1;
+        }
+        .hero__content { position: relative; z-index: 2; }
+        .hero__badge {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 20px rgba(220,38,38,0.5);
+        }
+        .hero__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+        .hero__title span { color: var(--yellow); }
+        .hero__sub {
+            color: #D1D5DB;
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+        }
+        .hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 30px rgba(251,191,36,0.4);
+        }
+        .hero__cta:hover { background: var(--yellow-dark); transform: scale(1.05); }
+
+        /* ============ CONTAINER ============ */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* ============ SECTION ============ */
+        .section { padding: 70px 0; }
+        .section--dark { background: #0D0D0D; }
+        .section--light { background: #1A1A1A; }
+        .section__header { text-align: center; margin-bottom: 50px; }
+        .section__icon {
+            display: inline-block;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .section__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 6px;
+        }
+        .section__title span { color: var(--yellow); }
+        .section__line {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+        .section__desc { color: #AAA; max-width: 500px; margin: 0 auto; }
+
+        /* ============ COMBO CARDS ============ */
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .combo-card {
+            background: #1E1E1E;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #2A2A2A;
+            transition: var(--transition);
+            position: relative;
+        }
+        .combo-card:hover {
+            border-color: var(--red);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+        .combo-card__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .combo-card__body { padding: 24px; }
+        .combo-card__badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--red);
+            color: white;
+            padding: 5px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+        .combo-card__badge--new {
+            background: var(--yellow);
+            color: var(--dark);
+        }
+        .combo-card__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
+        }
+        .combo-card__items {
+            list-style: none;
+            margin-bottom: 14px;
+        }
+        .combo-card__items li {
+            padding: 3px 0;
+            font-size: 0.9rem;
+            color: #AAA;
+        }
+        .combo-card__items li::before {
+            content: '✓ ';
+            color: var(--red);
+            font-weight: 700;
+        }
+        .combo-card__price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--yellow);
+        }
+        .combo-card__price small { font-size: 0.85rem; font-weight: 400; color: #888; }
+
+        /* ============ MENU GRID ============ */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .menu-item {
+            background: #1E1E1E;
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            border: 1px solid #2A2A2A;
+        }
+        .menu-item:hover {
+            border-color: var(--red);
+            transform: translateX(4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .menu-item__name {
+            font-weight: 600;
+            color: white;
+            font-size: 0.95rem;
+        }
+        .menu-item__price {
+            font-weight: 700;
+            color: var(--yellow);
+            font-size: 1.05rem;
+            white-space: nowrap;
+        }
+
+        /* ============ CATEGORY BANNER ============ */
+        .category-banner {
+            height: 250px;
+            border-radius: var(--radius-lg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .category-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .category-banner__title {
+            position: relative;
+            z-index: 1;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        /* ============ CONTACT ============ */
+        .contact-bar {
+            background: var(--red);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .contact-bar__phone {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .contact-bar__social {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .contact-bar__social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .contact-bar__social a:hover { background: var(--yellow); color: var(--dark); }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: #000;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero__title { font-size: 2.5rem; }
+            .section__title { font-size: 1.8rem; }
+            .combo-grid { grid-template-columns: 1fr; }
+            .menu-grid { grid-template-columns: 1fr 1fr; }
+            .header__inner { flex-direction: column; text-align: center; }
+            .category-banner { height: 180px; }
+            .category-banner__title { font-size: 1.8rem; }
+        }
+        @media (max-width: 480px) {
+            .menu-grid { grid-template-columns: 1fr; }
+            .hero__title { font-size: 1.8rem; }
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .section__title, .combo-card__title, .menu-item__name { color: black; }
+            .combo-card, .menu-item { background: white; border: 1px solid #ddd; box-shadow: none; }
+            .combo-card__price, .menu-item__price { color: #B91C1C; }
+            .combo-card__items li { color: #555; }
+            .hero { background: none; padding: 30px; }
+            .hero__title { color: black; text-shadow: none; }
+            .hero__sub, .section__desc { color: #555; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ TOP BAR ============ -->
+    <div class="topbar">
+        <i class="fas fa-motorcycle"></i> Delivery Partners: <span>beu delivery</span> & <span>Zmall App Store</span> 🛵
+    </div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="logo">
+                <div class="logo__icon">🍔</div>
+                <div>
+                    <div class="logo__text">IN-JOY<span>®</span> BURGER</div>
+                    <div class="logo__sub">Taste The Joy</div>
+                </div>
+            </div>
+            <a href="tel:+251936638787" class="btn-order">
+                <i class="fas fa-phone"></i> Order Now
+            </a>
+        </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="hero__content">
+            <div class="hero__badge">🍔 PREMIUM MENU</div>
+            <h1 class="hero__title">Taste <span>The</span> Joy</h1>
+            <p class="hero__sub">Burgers • Sandwiches • Wraps • Wings • Nuggets • Drinks</p>
+            <a href="tel:+251936638787" class="hero__cta">
+                <i class="fas fa-phone-alt"></i> +251 936 638 787
+            </a>
+        </div>
+    </section>
+
+    <!-- ============ BURGER COMBOS ============ -->
+    <section class="section section--dark">
+        <div class="container">
+            <div class="section__header">
+                <div class="section__icon">🍔</div>
+                <h2 class="section__title">Burger <span>Combos</span></h2>
+                <p class="section__desc">Perfectly paired meals for every appetite</p>
+                <div class="section__line"></div>
+            </div>
+            <div class="combo-grid">
+                <!-- Combo 1 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80" alt="Double Delight Combo" class="combo-card__image">
+                    <div class="combo-card__badge">BEST SELLER</div>
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Double Delight</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Beef Burgers</li>
+                            <li>2 Cheese Burgers</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">1,299.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 2 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?w=600&q=80" alt="Double Stack" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Double Stack</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Double Burgers</li>
+                            <li>2 Cheese Burgers</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">949.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 3 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80" alt="Chicken Burger" class="combo-card__image">
+                    <div class="combo-card__badge combo-card__badge--new">NEW!</div>
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Chicken Burger</h3>
+                        <ul class="combo-card__items">
+                            <li>Single Chicken Burger</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">649.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 4 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?w=600&q=80" alt="Double Chicken" class="combo-card__image">
+                    <div class="combo-card__badge combo-card__badge--new">NEW!</div>
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Double Chicken</h3>
+                        <ul class="combo-card__items">
+                            <li>Double Chicken Burger</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">849.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 5 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?w=600&q=80" alt="Chicken Sandwich Combo" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Chicken Sandwich Combo</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Beef Chicken Sandwiches</li>
+                            <li>Cheeseburger</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">899.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 6 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=600&q=80" alt="Sandwich Duo" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Sandwich Duo</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Beef Chicken Sandwiches</li>
+                            <li>Cheeseburger</li>
+                        </ul>
+                        <div class="combo-card__price">699.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 7 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=600&q=80" alt="Slice & Egg Combo" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Slice & Egg Combo</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Beef Slices</li>
+                            <li>2 Cheese Slices</li>
+                            <li>Egg Sandwich</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">799.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 8 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1603073163308-9654c3fb70b5?w=600&q=80" alt="Slice & Egg" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Slice & Egg</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Beef Slices</li>
+                            <li>2 Cheese Slices</li>
+                            <li>Egg Sandwich</li>
+                        </ul>
+                        <div class="combo-card__price">599.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 9 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80" alt="Egg Slice Combo" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Egg Slice Combo</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Beef Slices</li>
+                            <li>2 Cheese Slices</li>
+                            <li>Egg Slice</li>
+                        </ul>
+                        <div class="combo-card__price">449.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 10 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=600&q=80" alt="Slice & Egg Deluxe" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Slice & Egg Deluxe</h3>
+                        <ul class="combo-card__items">
+                            <li>2 Beef Slices</li>
+                            <li>2 Cheese Slices</li>
+                            <li>Egg Slice</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">499.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 11 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80" alt="Wings Combo" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Wings Combo</h3>
+                        <ul class="combo-card__items">
+                            <li>5 pcs Fried Wings</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">749.99 <small>ETB</small></div>
+                    </div>
+                </div>
+                <!-- Combo 12 -->
+                <div class="combo-card">
+                    <img src="https://images.unsplash.com/photo-1520072959219-c595dc870360?w=600&q=80" alt="Veggie Burger Combo" class="combo-card__image">
+                    <div class="combo-card__body">
+                        <h3 class="combo-card__title">Veggie Burger Combo</h3>
+                        <ul class="combo-card__items">
+                            <li>Veggie Patty Burger</li>
+                            <li>French Fries</li>
+                        </ul>
+                        <div class="combo-card__price">369.99 <small>ETB</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WITHOUT FRENCH FRIES ============ -->
+    <section class="section section--light">
+        <div class="container">
+            <div class="category-banner" style="background-image: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=1200&q=80');">
+                <h3 class="category-banner__title">Without French Fries</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-item__name">Cheese Burger</span><span class="menu-item__price">619.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Beef Burger</span><span class="menu-item__price">519.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Veggie Burger</span><span class="menu-item__price">369.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">J Chicken</span><span class="menu-item__price">569.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">J Double Chicken</span><span class="menu-item__price">769.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Wings</span><span class="menu-item__price">669.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Drumsticks</span><span class="menu-item__price">819.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Nuggets</span><span class="menu-item__price">719.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Killer</span><span class="menu-item__price">769.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Crispy</span><span class="menu-item__price">839.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Ham & Cheese</span><span class="menu-item__price">414.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Egg Sandwich</span><span class="menu-item__price">339.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Veggie Sandwich</span><span class="menu-item__price">339.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Tuna Sandwich</span><span class="menu-item__price">559.99</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SANDWICHES & WRAPS ============ -->
+    <section class="section section--dark">
+        <div class="container">
+            <div class="category-banner" style="background-image: url('https://images.unsplash.com/photo-1509722747041-616f39b57569?w=1200&q=80');">
+                <h3 class="category-banner__title">Sandwiches & Wraps</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-item__name">Veggie Sandwich</span><span class="menu-item__price">420.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Tuna Sandwich</span><span class="menu-item__price">640.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Ham & Cheese</span><span class="menu-item__price">495.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Egg Sandwich</span><span class="menu-item__price">420.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Veggie Wrap</span><span class="menu-item__price">399.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Chicken Wrap</span><span class="menu-item__price">850.00</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EXTRAS & DRINKS ============ -->
+    <section class="section section--light">
+        <div class="container">
+            <div class="category-banner" style="background-image: url('https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=1200&q=80');">
+                <h3 class="category-banner__title">Extras & Drinks</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-item__name">French Fries</span><span class="menu-item__price">400.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Extra Items</span><span class="menu-item__price">100.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">5 pcs Fried Wings</span><span class="menu-item__price">749.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Fried Chicken Nuggets</span><span class="menu-item__price">719.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">3 pcs Drumsticks</span><span class="menu-item__price">819.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Veggie Patty</span><span class="menu-item__price">369.99</span></div>
+                <div class="menu-item"><span class="menu-item__name">Bottled Water</span><span class="menu-item__price">65.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Soft Drink (300ml)</span><span class="menu-item__price">95.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Soft Drink (500ml)</span><span class="menu-item__price">125.00</span></div>
+                <div class="menu-item"><span class="menu-item__name">Flavour Ambo</span><span class="menu-item__price">100.00</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <div class="contact-bar">
+        <div class="container">
+            <h3 style="font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:6px;">Order Now!</h3>
+            <div class="contact-bar__phone">📞 +251 936 638 787</div>
+            <p style="margin-top:6px; opacity:0.9;">For comments and suggestions, contact us</p>
+            <div class="contact-bar__social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 IN-JOY® BURGER. All rights reserved. | Taste The Joy 🍔</p>
+        </div>
+    </footer>
+
+</body>
+</html>
